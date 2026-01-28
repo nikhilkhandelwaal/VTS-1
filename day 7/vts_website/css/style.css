@@ -1,0 +1,120 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main {
+    width: 1800px;
+    height: 1000px;
+    border: 1px solid red;
+    margin: auto;
+}
+
+/* Header section start  */
+.header {
+    width: 100%;
+    height: 80px;
+}
+
+.logo {
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.logo-img {
+    margin-top: 20px;
+}
+
+.nav_menu {
+    width: 80%;
+    height: 100%;
+    background-color: black;
+    float: right;
+    color: white;
+    padding-left: 500px;
+}
+
+.menu-item {
+    float: left;
+    font-size: 18px;
+    margin: 0px 30px;
+    margin-top: 30px;
+}
+
+.btn {
+    margin-top: 22px;
+    border: 2px solid white;
+    padding: 8px 15px;
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+/* Header section end */
+
+/* Explorer program section start */
+.ex_program {
+    width: 1300px;
+    height: 600px;
+    /* background-color: lightcyan; */
+    margin: auto;
+    margin-top: 100px;
+
+}
+
+.empowring {
+    width: 50%;
+    height: 100%;
+    /* background-color: limegreen; */
+    float: left;
+    padding-right: 50px;
+}
+
+.empower_img {
+    width: 50%;
+    height: 100%;
+    /* background-color: lightseagreen; */
+    float: right;
+}
+
+.empowring_h1 {
+    font-size: 60px;
+}
+
+.empowring_h3 {
+    font-size: 25px;
+    color: red;
+    margin: 20px 0px;
+}
+
+.empowring_p {
+    color: rgb(43, 35, 35);
+    font-size: 18px;
+}
+
+.features {
+    width: 25%;
+    float: left;
+    text-align: center;
+    padding: 20px 0px;
+    margin: 10px;
+    border: 1px solid rgb(229, 220, 220);
+    border-radius: 10px;
+}
+
+.btn1 {
+    /* background-color: red; */
+    background: linear-gradient(to right, red, rgb(60, 2, 2));
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Explorer program section end */
