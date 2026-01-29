@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .descri {
+            resize: none;
+        }
+        .btn{
+            padding: 10px 15px;
+            background-color: lightcoral;
+            border-radius: 10px;
+            border: none;
+        }
+        .input{
+            width: 300px;
+            padding: 5px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            border: none;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <form>
+            <div>
+                <label>Name:</label>
+                <input class="input" type="text" placeholder="Enter Your Name" />
+            </div>
+            <div>
+                <label>Email:</label>
+                <input class="input" type="email" placeholder="Enter your email">
+            </div>
+            <div>
+                <label>Age:</label>
+                <input class="input" type="number" placeholder="Enter your age" min="18" max="35">
+            </div>
+            <div>
+                <label>Gender:</label>
+                <input type="radio" name="gender">Male
+                <input type="radio" name="gender">Female
+            </div>
+            <div>
+                <label>Course:</label>
+                <input type="checkbox" name="course">HTML
+                <input type="checkbox" name="course">CSS
+                <input type="checkbox" name="course">JavaScript
+                <input type="checkbox" name="course">Tailwind
+                <input type="checkbox" name="course">Node Js
+                <input type="checkbox" name="course">React Js
+            </div>
+            <div>
+                <label> Password: </label>
+                <input class="input" type="password">
+            </div>
+            <div>
+                <label>Country: </label>
+                <select name="" id="">
+                    <option value="">----Select Country----</option>
+                    <option value="">India</option>
+                    <option value="">Australia</option>
+                    <option value="">USA</option>
+                    <option value="">UK</option>
+                    <option value="">England</option>
+                </select>
+            </div>
+            <div>
+                <div>
+                    <label for="">Description: </label>
+                </div>
+                <textarea name="" id="" cols="30" rows="6" class="descri"></textarea>
+            </div>
+            <div>
+                <label>Attach CV: </label>
+                <input type="file">
+            </div>
+            <div>
+                <input type="button" value="Normal">
+                <input type="submit">
+                <input type="reset">
+            </div>
+            <div>
+                <input type="date">
+            </div>
+            <div>
+                <input type="time">
+            </div>
+            <div>
+                <input type="week">
+            </div>
+            <div>
+                <input type="tel">
+            </div>
+            <div>
+                <input type="range">
+            </div>
+            <div>
+                <input type="color">
+            </div>
+            <button class="btn">Click Me</button>
+        </form>
+
+
+    </div>
+
+
+</body>
+
+</html>
