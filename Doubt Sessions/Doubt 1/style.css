@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.empower {
+    width: 1200px;
+    height: 700px;
+    margin: auto;
+    /* background-color: lightblue; */
+}
+
+.empower_left {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.empower_right {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.empower_left h1 {
+    font-size: 50px;
+}
+
+.empower_left h3 {
+    color: red;
+    margin: 30px 0px;
+}
+
+.empower_left p {
+    color: gray;
+}
+
+.box {
+    width: 170px;
+    text-align: center;
+    padding: 20px 0px;
+    float: left;
+    margin: 20px 10px;
+    box-shadow: 0px 0px 15px 1px #ccc;
+    border-radius: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background: linear-gradient(to right, red, rgb(151, 4, 4));
+}
