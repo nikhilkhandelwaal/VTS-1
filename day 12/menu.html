@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu {
+            width: 1000px;
+            padding: 10px 15px;
+            background-color: lightcoral;
+            display: flex;
+        }
+
+        .menuItem {
+            background-color: lightseagreen;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0px 10px;
+            position: relative;
+        }
+
+        .dropDown {
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            display: none;
+        }
+
+        .dropDown div {
+            width: 75%;
+            padding: 10px;
+            background-color: lightblue;
+        }
+
+        .menuItem:hover .dropDown {
+            display: block;
+        }
+
+        .dropDown div:hover {
+            background-color: gray;
+            color: white;
+            transition: 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menuItem">Home</div>
+        <div class="menuItem">About Us</div>
+        <div class="menuItem">Course
+            <div class="dropDown">
+                <div>HTML</div>
+                <div>CSS</div>
+                <div>JavaScript</div>
+                <div>React JS</div>
+                <div>Node Js</div>
+            </div>
+        </div>
+        <div class="menuItem">Blog</div>
+        <div class="menuItem">Contact Us</div>
+    </div>
+</body>
+
+</html>
