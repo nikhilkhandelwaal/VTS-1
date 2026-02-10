@@ -1,0 +1,21 @@
+@media only screen and (min-width:0px) and (max-width:576px) {
+    .main {
+        background-color: red;
+        color: white;
+    }
+}
+
+@media only screen and (min-width:577px) and (max-width:991px) {
+    .main {
+        background-color: blue;
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+@media only screen and (min-width:992px) and (max-width:1200px) {
+    .main {
+        background-color: green;
+        font-style: italic;
+    }
+}

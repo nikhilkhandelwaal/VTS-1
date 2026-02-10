@@ -1,0 +1,30 @@
+@media only screen and (min-width:0px) and (max-width:576px) {
+    .header {
+        text-align: left;
+    }
+
+    .mobileMenu {
+        display: block;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .rightSideBar {
+        width: 100%;
+    }
+
+    .navMenu {
+        width: 50%;
+        height: 100%;
+        top: 0px;
+        position: absolute;
+        flex-direction: column;
+        justify-content: flex-start;
+        transform: translateX(-100%);
+    }
+    .navMenu div{
+        border: none;
+    }
+}

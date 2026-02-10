@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    max-width: 1200px;
+    background-color: lightblue;
+    border: 1px solid black;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    text-align: justify;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 23%;
+    background-color: lightcoral;
+    padding: 20px;
+}
