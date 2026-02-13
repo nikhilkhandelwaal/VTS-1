@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // Comparision operator will give output in true or false
+    // var a = 10;
+    // var b = 20;
+
+    // console.log(a >= b);
+
+
+    // and => &&, OR => ||, not => !
+    var a = 10;
+    var b = 20;
+    var c = 30;
+    var d = 10;
+    var e = 20;
+
+    console.log(a == b && b == c); // false && false => false
+    console.log(a == d && c == d); // true && false => False
+    console.log(b == d && b == e); // false && true => false
+    console.log(b == e && a == d); // true && true => true
+
+
+    console.log(a == b || b == c); // false || false => false
+    console.log(a == d || c == d); // true || false => true
+    console.log(b == d || b == e); // false || true => true
+    console.log(b == e || a == d); // true || true => true
+
+    console.log(!(a == b)); // true
+    console.log(!(e == b));  // false
+
+</script>
+
+</html>
