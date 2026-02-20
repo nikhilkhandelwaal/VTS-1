@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // // first way to create a array
+    // var arr = [10, 20, 30, 40, 50];
+
+    // // Second way to create a array
+    // var arr1 = Array(10, 20, 30, 40, 50);
+
+
+    // var arr = [10, 20, 30, 40, 50, "hello", true, 35];
+    // console.log(arr.length);
+    // console.log(arr[4]);
+    // console.log(arr[arr.length - 3]);
+
+    // var arr = [10, 20, 30, 40, 50, [11, 22, 33], 60];
+    // console.log(arr[5][1]);
+
+    // var arr = [10, 20, 30, 40, 50];
+    // console.log(arr[2]);
+    // arr[3] = 35;
+    // console.log(arr); // [10,20,30,35,50]    
+
+    // arr[2] = 22;
+    // console.log(arr); // [10,20,22,40,50]    
+
+    // var greet = "hello Everyone";
+
+    // console.log(greet[4]);
+
+    // var arr = [10, 20, ["hello", "welcome"], true, 35];
+
+    // console.log(arr[2][1][1]);
+
+    // var arr = [10, 20, 30, 40, 50];
+
+    // // To print all index number of array
+    // for (var i = 0; i < arr.length; i++) {
+    //     console.log(i);
+    // }
+
+    // // To print all values of array
+    // for (var i = 0; i < arr.length; i++) {
+    //     console.log(arr[i]);
+    // }
+
+    // To print all index number
+    // var arr = [10, 20, 30, 40, 50];
+    // for (var i in arr) {
+    //     console.log(i);
+    // }
+
+    // for (var i of arr) {
+    //     console.log(i);
+    // }
+
+
+    var arr = [10, 20, 30, 40, 50];
+
+    for (var i of arr) {
+        arr[4] = i;
+    }
+    console.log(arr);
+    // [10,20,30,40,50], ,           
+
+
+
+</script>
+
+</html>
