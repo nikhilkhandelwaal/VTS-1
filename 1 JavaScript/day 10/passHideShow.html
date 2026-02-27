@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="myname" placeholder="Enter your name" id="inputName">
+    <button onclick="showPass()">Click Me</button>
+</body>
+<script>
+
+    var inputTag = document.getElementById("inputName");
+
+    function showPass() {
+        if (inputTag.type == "text") {
+            inputTag.type = "password";
+        } else {
+            inputTag.type = "text";
+        }
+    }
+
+</script>
+
+</html>
