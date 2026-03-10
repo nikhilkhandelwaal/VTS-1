@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 300px;
+            margin: auto;
+            text-align: center;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main button {
+            background-color: blue;
+            color: white;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <button onclick="decs()">-</button>
+        <span id="count">1</span>
+        <button onclick="inc()">+</button>
+    </div>
+
+</body>
+<script>
+
+    var count = document.getElementById('count');
+
+
+    function inc() {
+        count.innerText = Number(count.innerText) + 1;
+    }
+
+    function decs() {
+        count.innerText = Number(count.innerText) - 1;
+    }
+
+
+
+</script>
+
+</html>

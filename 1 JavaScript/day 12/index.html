@@ -31,10 +31,23 @@
     var output = document.getElementById('output');
 
     function calculate() {
-        console.log(input1);
-        console.log(opr);
-        console.log(input2);
-        console.log(output);
+        // console.log(input1.value); // 10
+        // console.log(opr.value); // /
+        // console.log(input2.value);// 20
+        // console.log(output.value); // 40
+        if (opr.value == '+') {
+            output.value = Number(input1.value) + Number(input2.value);
+        } else if (opr.value == '-') {
+            output.value = Number(input1.value) - Number(input2.value);
+        } else if (opr.value == '*') {
+            output.value = Number(input1.value) * Number(input2.value);
+        } else if (opr.value == '/') {
+            output.value = Number(input1.value) / Number(input2.value);
+        } else {
+            alert("Please select correct operator")
+        }
+
+
     }
 
 
