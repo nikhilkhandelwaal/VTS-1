@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus quod nostrum nesciunt dolore illum
+        commodi tempore voluptate quidem, voluptas perspiciatis quaerat id nulla placeat perferendis reiciendis aliquam
+        soluta amet?
+    </div>
+    <button onclick="deep()">Add</button>
+    <button onclick="shubh()">Remove</button>
+    <button onclick="toggle()">Toggle</button>
+</body>
+<script>
+
+    var box = document.querySelector(".box");
+
+    function deep() {
+        box.style.background = 'blue';
+    }
+
+    function shubh() {
+        box.style.background = '';
+    }
+
+    function toggle() {
+        if (box.style.background == 'blue') {
+            shubh();
+        } else {
+            deep();
+        }
+    }
+
+
+
+
+</script>
+
+</html>
