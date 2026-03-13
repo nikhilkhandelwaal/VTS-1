@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            vw => viewport width
+            vh => viewport height
+        */
+        .main {
+            width: 100vw;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .model {
+            width: 500px;
+            height: 400px;
+            box-shadow: 0px 0px 20px 5px #ccc;
+            position: relative;
+            transform: translateY(-700px);
+            transition: 0.2s;
+        }
+
+        .showModel {
+            transform: translateY(0px);
+        }
+
+        .model button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="open">Open Model</button>
+    <div class="main">
+        <div class="model">
+            <button id="close">X</button>
+        </div>
+    </div>
+</body>
+<script>
+
+    var openModel = document.querySelector('#open');
+    var model = document.querySelector('.model');
+    var closeModel = document.querySelector('#close');
+
+    openModel.addEventListener('click', function () {
+        model.classList.add('showModel');
+    })
+
+    closeModel.addEventListener('click', function () {
+        model.classList.remove('showModel');
+    })
+
+
+
+
+</script>
+
+</html>

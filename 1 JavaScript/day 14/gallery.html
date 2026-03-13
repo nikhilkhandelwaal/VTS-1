@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery img {
+            width: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <img src="https://picsum.photos/id/237/800/500" alt="" id="mainImg">
+        </div>
+        <div class="gallery">
+            <img onmouseleave="defaultImg()" onmouseenter="changeImg(this)" src="https://picsum.photos/id/238/800/500"
+                alt="">
+            <img onmouseleave="defaultImg()" onmouseenter="changeImg(this)" src="https://picsum.photos/id/239/800/500"
+                alt="">
+            <img onmouseleave="defaultImg()" onmouseenter="changeImg(this)" src="https://picsum.photos/id/240/800/500"
+                alt="">
+            <img onmouseleave="defaultImg()" onmouseenter="changeImg(this)" src="https://picsum.photos/id/241/800/500"
+                alt="">
+            <img onmouseleave="defaultImg()" onmouseenter="changeImg(this)" src="https://picsum.photos/id/242/800/500"
+                alt="">
+            <img onmouseleave="defaultImg()" onmouseenter="changeImg(this)" src="https://picsum.photos/id/243/800/500"
+                alt="">
+        </div>
+    </div>
+</body>
+<script>
+    var mainImg = document.querySelector('#mainImg');
+
+    function changeImg(img) {
+        mainImg.src = img.src;
+    }
+
+    function defaultImg() {
+        mainImg.src = "https://picsum.photos/id/237/800/500";
+    }
+
+
+</script>
+
+</html>

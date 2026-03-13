@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 600px;
+            padding: 10px;
+        }
+
+        .para {
+            background: red;
+            color: white;
+            text-decoration: underline;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, rem quis. Cum, possimus tempore at iste
+            itaque vero, aperiam exercitationem autem fuga facilis modi, esse facere. Inventore aliquam quo nemo. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Doloribus, rem quis. Cum, possimus tempore at iste itaque
+            vero, aperiam exercitationem autem fuga facilis modi, esse facere. Inventore aliquam quo nemo. Lorem ipsum
+            dolor
+            sit amet consectetur adipisicing elit. Doloribus, rem quis. Cum, possimus tempore at iste itaque vero,
+            aperiam exercitationem autem fuga facilis modi, esse facere. Inventore aliquam quo nemo. Lorem ipsum dolor
+            sit amet
+            consectetur adipisicing elit. Doloribus, rem quis. Cum, possimus tempore at iste itaque vero, aperiam
+            exercitationem autem fuga facilis modi, esse facere. Inventore aliquam quo nemo.
+        </p>
+        <button id="add">Add</button>
+        <button id="remove">Remove</button>
+        <button id="toggle">Toggle</button>
+    </div>
+</body>
+<script>
+
+    var paragraph = document.querySelector('p');
+    var addCss = document.querySelector('#add');
+    var removeCss = document.querySelector('#remove');
+    var toggleCss = document.querySelector('#toggle');
+
+    // addEventListner
+    addCss.addEventListener(
+        'click', function () {
+            paragraph.classList.add('para');
+        }
+    ); // addEventListner needs two parameters => event name, function
+
+
+    removeCss.addEventListener(
+        'click', function () {
+            paragraph.classList.remove('para');
+        }
+    )
+    toggleCss.addEventListener(
+        'click', function () {
+            paragraph.classList.toggle('para');
+        }
+    )
+
+
+</script>
+
+</html>
