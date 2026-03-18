@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="count">0</h1>
+    <button id="start">Start</button>
+    <button>Stop</button>
+    <button>Reset</button>
+</body>
+<script>
+
+    var start = document.getElementById('start');
+    var count = document.getElementById('count');
+    var num = 1;
+
+    start.addEventListener('click', function () {
+        setInterval(function () {
+            count.innerText = num;
+            num++;
+        }, 100)
+    })
+
+
+
+</script>
+
+</html>
