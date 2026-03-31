@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Call by reference
+    // let arr = [10, 20, 30, 40, 50];
+    // let arr1 = arr;
+
+    // arr[1] = 25;
+    // arr1[2] = 35;
+
+    // console.log(arr); // [10,25,30,40,50];
+    // console.log(arr1); // [10,25,30,40,50];
+
+
+
+
+    // Call by values
+    // let a = 10;
+    // let b = a;
+
+    // a = 20;
+
+    // console.log(a);
+    // console.log(b);
+
+    let arr = [10, 20, 30, 40, 50];
+    let arr1 = [...arr]; // Shallow Copy
+
+    arr[1] = 25;
+    arr1[2] = 35;
+
+    console.log(arr); // [10,25,30,40,50];
+    console.log(arr1); // [10,25,30,40,50];
+
+
+</script>
+
+</html>
