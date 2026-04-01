@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    // Traditional Function
+    // function greet() {
+    //     console.log("hello Everyone");
+    // }
+
+    // greet();
+
+    // Arrow Functions
+    // const greet = () => {
+    //     console.log("hello Everyone");
+    // }
+    // greet(); // Function calling
+
+
+    // forEach Map, filter, Reduce
+
+    // forEach
+    // const arr = [10, 20, 30, 40, 50];
+
+    // arr.forEach(
+    //     (value, index) => {
+    //         console.log(index);
+    //     }
+    // );
+
+    // const arr = [10, 20, 30, 40, 50];
+    //  Map => 
+    //          It won't modify your current array
+    //          It will create a new Array with modified values
+
+    // const newArr = arr.map(
+    //     (value, index) => {
+    //         return value * 2; //
+    //     }
+    // )
+    // console.log(newArr);
+
+    // const arr = ['hello', "Welcome", "India", "delhi", 'jaipur'];
+
+    // const newArr = arr.map(
+    //     (value, index) => {
+    //         return value.toLowerCase();
+    //     }
+    // )
+    // console.log(newArr);
+
+    // Filter =>
+    //          It won't modify your current array
+    //          Filter some values from array and create a new array
+
+    const arr = [5, 7, 10, 24, 13, 14, 25, 33, 12];
+    const newArr = arr.filter(
+        (value, index) => {
+            if (value == 7 || value == 10) {
+                return value;
+            }
+        }
+    )
+    console.log(newArr);
+
+
+
+
+
+
+
+</script>
+
+</html>
