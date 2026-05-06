@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modern CRUD App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT FORM -->
+        <div class="form-card">
+            <form action="" onsubmit="submitForm(event)">
+                <h2>Employee Form</h2>
+
+                <input type="text" id="name"  placeholder="Full Name">
+                <input type="email" id="email"  placeholder="Email">
+                <input type="text" id="phone"  placeholder="Phone">
+                <input type="text" id="role"  placeholder="Role">
+                <input type="text" id="city"  placeholder="City">
+                <input type="number" id="salary"  placeholder="Salary">
+                <input type="text" id="company"  placeholder="Company">
+
+                <div class="btn-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- RIGHT TABLE -->
+        <div class="table-card">
+            <h2>Employee Records</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Role</th>
+                        <th>City</th>
+                        <th>Salary</th>
+                        <th>Company</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                        <td>Role</td>
+                        <td>City</td>
+                        <td>Salary</td>
+                        <td>Company</td>
+                        <td>
+                            <button class="action-btn edit">Edit</button>
+                            <button class="action-btn delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
