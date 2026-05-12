@@ -17,3 +17,40 @@
   border-radius: 10px;
   font-size: 25px;
 }
+
+.green {
+  color: green;
+}
+
+.pass {
+  margin: 10px;
+}
+
+.pass input {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.pass button {
+  background-color: rgb(17, 17, 92);
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+}
+
+.modal {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0px 0px 5px 2px #ccc;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  transform: translateY(-320px);
+  background-color: lightcoral;
+  transition: 0.5s;
+}
+
+.modalShow {
+  transform: translateY(0px);
+}

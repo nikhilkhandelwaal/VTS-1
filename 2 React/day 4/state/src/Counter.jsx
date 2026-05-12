@@ -8,12 +8,10 @@ export default function Counter({ productPrice }) {
 
     const decs = () => {
         setCount(count - 1);
-        // 
     }
 
     const inc = () => {
         setCount(count + 1);
-        // setCount(2+1) => setCount(3)
     }
 
 
@@ -23,7 +21,7 @@ export default function Counter({ productPrice }) {
             <button onClick={decs}>-</button>
             <h1>{count}</h1>
             <button onClick={inc}>+</button>
-            <h1>{productPrice * count}</h1>
+            <h1 className={count >= 5 ? 'green' : ''}>{productPrice * count}</h1>
         </div>
     )
 }
