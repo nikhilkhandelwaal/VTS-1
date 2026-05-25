@@ -1,12 +1,12 @@
 import React from 'react'
 import Counter from './Counter'
-import Abc from './Abc'
+import Shop from './Shop'
 
 export default function App() {
   return (
     <div>
-      <Counter />
-      {/* <Abc /> */}
+      {/* <Counter /> */}
+      <Shop />
     </div>
   )
 }
