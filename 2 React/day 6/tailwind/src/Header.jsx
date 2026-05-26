@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
     return (
@@ -12,38 +13,23 @@ export default function Header() {
 
                 {/* Right Side - Navigation */}
                 <nav className="flex items-center gap-6">
-                    <a
-                        href="#"
-                        className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
-                    >
+                    <Link to={'/'}>
                         Home
-                    </a>
-
-                    <a
-                        href="#"
-                        className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
-                    >
+                    </Link>
+                    <Link to={'/about'}>
                         About
-                    </a>
-
-                    <a
-                        href="#"
-                        className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
-                    >
+                    </Link>
+                    <Link to={'/contact'}>
                         Contact
-                    </a>
-
-                    <a
-                        href="#"
-                        className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
-                    >
+                    </Link>
+                    <Link to={'/shop'}>
                         Shop
-                    </a>
-
-                    {/* Cart Button */}
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-200">
-                        Cart
-                    </button>
+                    </Link>
+                    <Link to={'/cart'}>
+                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-200">
+                            Cart
+                        </button>
+                    </Link>
                 </nav>
             </div>
         </header>

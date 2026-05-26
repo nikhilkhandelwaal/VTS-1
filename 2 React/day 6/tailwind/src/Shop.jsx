@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Header from './Header'
-import Footer from './Footer'
 import ProductCard from './ProductCard'
 import axios from 'axios';
+import Header from './Header'
+import Footer from './Footer'
 
 export default function Shop() {
 
