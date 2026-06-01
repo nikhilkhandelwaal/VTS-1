@@ -27,8 +27,8 @@ export default function Shop() {
 
     return (
         <>
-            <Header />
-            <section className="max-w-7xl mx-auto px-6 py-12">
+            {/* <Header /> */}
+            <section className="w-7xl mx-auto px-6 py-12">
 
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold text-gray-800">
@@ -50,7 +50,7 @@ export default function Shop() {
                     }
                 </div>
             </section>
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

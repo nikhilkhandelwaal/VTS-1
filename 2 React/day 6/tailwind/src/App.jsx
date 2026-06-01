@@ -6,6 +6,8 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Cart from './pages/Cart'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Layout from './pages/Layout'
+import ProductDetail from './ProductDetail'
 
 
 export default function App() {
@@ -14,23 +16,33 @@ export default function App() {
     [
       {
         path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/about",
-        element: <About />
-      },
-      {
-        path: "/contact",
-        element: <Contact />
-      },
-      {
-        path: "/shop",
-        element: <Shop />
-      },
-      {
-        path: "/cart",
-        element: <Cart />
+        element: <Layout />,
+        children: [
+          {
+            path: '',
+            element: <Home />
+          },
+          {
+            path: "/about",
+            element: <About />
+          },
+          {
+            path: "/contact",
+            element: <Contact />
+          },
+          {
+            path: "/shop",
+            element: <Shop />
+          },
+          {
+            path: "/cart",
+            element: <Cart />
+          },
+          {
+            path: "/productdetail/:productId",
+            element: <ProductDetail />
+          }
+        ]
       }
     ]
   )

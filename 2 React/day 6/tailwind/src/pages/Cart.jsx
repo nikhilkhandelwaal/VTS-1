@@ -5,9 +5,9 @@ import Footer from '../Footer'
 export default function Cart() {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <h1>Welcome to Cart Page</h1>
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }
