@@ -1,10 +1,28 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 export default function ProductDetail() {
 
+    const [currentProduct, setCurrentProduct] = useState({});
+
     const { productId } = useParams();
-    console.log(productId);
+
+    const getCurrentProduct = () => {
+        axios.get(`https://dummyjson.com/products/${productId}`).then(
+            (data) => {
+                setCurrentProduct(data.data);
+            }
+        ).catch(
+            (err) => {
+                console.log(err)
+            }
+        )
+    }
+
+    useEffect(() => {
+        getCurrentProduct();
+    }, []);
 
 
     return (
@@ -24,7 +42,7 @@ export default function ProductDetail() {
                     <div>
                         <div className="overflow-hidden rounded-2xl border bg-white">
                             <img
-                                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200"
+                                src={`${currentProduct.thumbnail}`}
                                 alt="Product"
                                 className="h-[550px] w-full object-cover"
                             />
@@ -71,7 +89,7 @@ export default function ProductDetail() {
                         </div>
 
                         <h1 className="text-4xl font-bold text-gray-900">
-                            Sony WH-1000XM5 Premium Wireless Noise Cancelling Headphones
+                            {currentProduct.title}
                         </h1>
 
                         <div className="mt-4 flex items-center gap-4">
@@ -86,13 +104,13 @@ export default function ProductDetail() {
 
                         <div className="mt-6 flex items-center gap-4">
                             <span className="text-4xl font-bold text-black">
-                                $299.99
+                                {Math.floor(currentProduct.price - currentProduct.discountPercentage * currentProduct.price / 100)}
                             </span>
                             <span className="text-xl text-gray-400 line-through">
-                                $399.99
+                                {currentProduct.price}
                             </span>
                             <span className="rounded-md bg-red-100 px-2 py-1 text-sm font-semibold text-red-600">
-                                Save $100
+                                Save {currentProduct.discountPercentage}%
                             </span>
                         </div>
 

@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 
 export default function ProductCard({ value }) {
 
-    console.log(value);
-
     return (
         <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
 
@@ -17,7 +15,7 @@ export default function ProductCard({ value }) {
             <div className="p-5">
                 <Link to={`/productdetail/${value.id}`}>
                     <h2 className="text-lg font-semibold text-gray-800">
-                        {value.title}
+                        {value.title} <span className='text-sm  text-gray-400'> ({value.rating})</span>
                     </h2>
                 </Link>
                 <h2 className="text-sm  text-gray-400">

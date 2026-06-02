@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import ProductCard from './ProductCard'
 import axios from 'axios';
 import Header from './Header'
@@ -7,6 +7,7 @@ import Footer from './Footer'
 export default function Shop() {
 
     const [allProducts, setAllProducts] = useState([]);
+    const price = useRef();
 
     const getAllProducts = () => {
         axios.get('https://dummyjson.com/products').then(
@@ -20,6 +21,10 @@ export default function Shop() {
         )
     }
 
+    const priceFilter = () => {
+        console.log(price.current.value);
+    }
+
     useEffect(() => {
         getAllProducts(); // Run this function on page refresh
     }, [])
@@ -28,17 +33,93 @@ export default function Shop() {
     return (
         <>
             {/* <Header /> */}
-            <section className="w-7xl mx-auto px-6 py-12">
 
-                <div className="mb-8">
-                    <h1 className="text-3xl font-bold text-gray-800">
-                        Featured Products
-                    </h1>
+            <section className="w-9xl mx-auto px-6 py-12 flex">
+                <aside className="w-72 bg-white border-r border-gray-200 p-5 space-y-6">
+                    {/* Header */}
+                    <div>
+                        <h2 className="text-xl font-semibold text-gray-900">Filters</h2>
+                        <p className="text-sm text-gray-500">Refine your results</p>
+                    </div>
 
-                    <p className="text-gray-500 mt-2">
-                        Browse our latest collection
-                    </p>
-                </div>
+                    {/* Categories */}
+                    <div>
+                        <h3 className="mb-3 text-sm font-medium text-gray-700">
+                            Categories
+                        </h3>
+
+                        <div className="space-y-2">
+                            {[
+                                "Electronics",
+                                "Fashion",
+                                "Home & Kitchen",
+                                "Beauty",
+                                "Sports",
+                                "Books",
+                            ].map((category) => (
+                                <label
+                                    key={category}
+                                    className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer"
+                                >
+                                    <input
+                                        type="checkbox"
+                                        className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                    />
+                                    {category}
+                                </label>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Price Filter */}
+                    <div>
+                        <h3 className="mb-3 text-sm font-medium text-gray-700">
+                            Price Range
+                        </h3>
+
+                        <input
+                            type="range"
+                            min="0"
+                            max="1000"
+                            defaultValue="500"
+                            className="w-full accent-blue-600"
+                            onChange={priceFilter}
+                            ref={price}
+                        />
+
+                        <div className="mt-2 flex justify-between text-xs text-gray-500">
+                            <span>$0</span>
+                            <span>$1000</span>
+                        </div>
+                    </div>
+
+                    {/* Rating Filter */}
+                    <div>
+                        <h3 className="mb-3 text-sm font-medium text-gray-700">
+                            Minimum Rating
+                        </h3>
+
+                        <input
+                            type="range"
+                            min="1"
+                            max="5"
+                            step="1"
+                            defaultValue="4"
+                            className="w-full accent-yellow-500"
+                        />
+
+                        <div className="mt-2 flex justify-between text-xs text-gray-500">
+                            <span>1★</span>
+                            <span>5★</span>
+                        </div>
+                    </div>
+
+                    {/* Apply Button */}
+                    <button className="w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition">
+                        Apply Filters
+                    </button>
+                </aside>
+
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {
