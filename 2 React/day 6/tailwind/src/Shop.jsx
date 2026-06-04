@@ -7,12 +7,15 @@ import Footer from './Footer'
 export default function Shop() {
 
     const [allProducts, setAllProducts] = useState([]);
+    const [showProducts, setShowProducts] = useState([]);
+    const [filterPrice, setFilterPrice] = useState(10000);
     const price = useRef();
 
     const getAllProducts = () => {
         axios.get('https://dummyjson.com/products').then(
             (data) => {
                 setAllProducts(data.data.products);
+                setShowProducts(data.data.products);
             }
         ).catch(
             (error) => {
@@ -22,12 +25,22 @@ export default function Shop() {
     }
 
     const priceFilter = () => {
-        console.log(price.current.value);
+        setFilterPrice(price.current.value);
     }
 
     useEffect(() => {
         getAllProducts(); // Run this function on page refresh
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        const filterProducts = allProducts.filter((product) => {
+            return product.price <= filterPrice;
+        });
+        setShowProducts(filterProducts);
+
+    }, [filterPrice]);
+
+
 
 
     return (
@@ -35,7 +48,7 @@ export default function Shop() {
             {/* <Header /> */}
 
             <section className="w-9xl mx-auto px-6 py-12 flex">
-                <aside className="w-72 bg-white border-r border-gray-200 p-5 space-y-6">
+                <aside className="w-100 bg-white border-r border-gray-200 p-5 space-y-6">
                     {/* Header */}
                     <div>
                         <h2 className="text-xl font-semibold text-gray-900">Filters</h2>
@@ -80,8 +93,8 @@ export default function Shop() {
                         <input
                             type="range"
                             min="0"
-                            max="1000"
-                            defaultValue="500"
+                            max="200"
+                            defaultValue="200"
                             className="w-full accent-blue-600"
                             onChange={priceFilter}
                             ref={price}
@@ -89,7 +102,7 @@ export default function Shop() {
 
                         <div className="mt-2 flex justify-between text-xs text-gray-500">
                             <span>$0</span>
-                            <span>$1000</span>
+                            <span>${filterPrice}</span>
                         </div>
                     </div>
 
@@ -123,7 +136,7 @@ export default function Shop() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {
-                        allProducts.map((value, index) => {
+                        showProducts.map((value, index) => {
                             return (
                                 <ProductCard value={value} />
                             )
