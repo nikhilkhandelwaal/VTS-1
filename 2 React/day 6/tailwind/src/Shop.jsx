@@ -9,6 +9,8 @@ export default function Shop() {
     const [allProducts, setAllProducts] = useState([]);
     const [showProducts, setShowProducts] = useState([]);
     const [filterPrice, setFilterPrice] = useState(10000);
+    const [allCategories, setAllCategories] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState(null);
     const price = useRef();
 
     const getAllProducts = () => {
@@ -24,12 +26,34 @@ export default function Shop() {
         )
     }
 
+    // fetch all categeories
+    const getAllCategories = () => {
+        axios.get('https://dummyjson.com/products/category-list').then((data) => {
+            setAllCategories(data.data);
+        }).catch(
+            (error) => {
+                console.log(error);
+            }
+        )
+    }
+
     const priceFilter = () => {
         setFilterPrice(price.current.value);
     }
 
+    const fetchCategory = (category) => {
+        console.log(category);
+        setSelectedCategory(category);
+        axios.get(`https://dummyjson.com/products/category/${category}`).then((data) => {
+            setAllProducts(data.data.products);
+            setShowProducts(data.data.products);
+        }).catch((err) => console.log(err))
+    }
+
+
     useEffect(() => {
         getAllProducts(); // Run this function on page refresh
+        getAllCategories();
     }, []);
 
     useEffect(() => {
@@ -54,36 +78,6 @@ export default function Shop() {
                         <h2 className="text-xl font-semibold text-gray-900">Filters</h2>
                         <p className="text-sm text-gray-500">Refine your results</p>
                     </div>
-
-                    {/* Categories */}
-                    <div>
-                        <h3 className="mb-3 text-sm font-medium text-gray-700">
-                            Categories
-                        </h3>
-
-                        <div className="space-y-2">
-                            {[
-                                "Electronics",
-                                "Fashion",
-                                "Home & Kitchen",
-                                "Beauty",
-                                "Sports",
-                                "Books",
-                            ].map((category) => (
-                                <label
-                                    key={category}
-                                    className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer"
-                                >
-                                    <input
-                                        type="checkbox"
-                                        className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                                    />
-                                    {category}
-                                </label>
-                            ))}
-                        </div>
-                    </div>
-
                     {/* Price Filter */}
                     <div>
                         <h3 className="mb-3 text-sm font-medium text-gray-700">
@@ -126,6 +120,33 @@ export default function Shop() {
                             <span>5★</span>
                         </div>
                     </div>
+
+                    {/* Categories */}
+                    <div>
+                        <h3 className="mb-3 text-sm font-medium text-gray-700">
+                            Categories
+                        </h3>
+
+                        <div className="space-y-2">
+                            <label
+                                className={`${selectedCategory ? "" : "bg-blue-600 text-white"} flex items-center gap-2 text-sm  cursor-pointer border p-2 border-gray-200 rounded-md px-4`}
+                                onClick={() => setSelectedCategory(null)}
+                            >
+                                All Categories
+                            </label>
+                            {allCategories.map((category) => (
+                                <label
+                                    key={category}
+                                    className={` ${selectedCategory === category ? "bg-blue-600 text-white" : ""} flex items-center gap-2 text-sm text-gray-600 cursor-pointer border p-2 border-gray-200 rounded-md px-4`}
+                                    onClick={() => fetchCategory(category)}
+                                >
+                                    {category}
+                                </label>
+                            ))}
+                        </div>
+                    </div>
+
+
 
                     {/* Apply Button */}
                     <button className="w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition">

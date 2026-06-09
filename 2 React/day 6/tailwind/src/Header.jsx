@@ -27,7 +27,7 @@ export default function Header() {
                     </Link>
                     <Link to={'/cart'}>
                         <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-200">
-                            Cart
+                            Cart (0)
                         </button>
                     </Link>
                 </nav>
