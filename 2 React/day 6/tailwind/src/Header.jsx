@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { Context } from './Context/MainContext'
 
 export default function Header() {
+
+    const { cart } = useContext(Context);
+
+
     return (
         <header className="w-full bg-white shadow-md">
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -27,7 +32,7 @@ export default function Header() {
                     </Link>
                     <Link to={'/cart'}>
                         <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-200">
-                            Cart (0)
+                            Cart ({cart.length})
                         </button>
                     </Link>
                 </nav>

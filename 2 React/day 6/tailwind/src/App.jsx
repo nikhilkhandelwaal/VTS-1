@@ -8,6 +8,7 @@ import Cart from './pages/Cart'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './pages/Layout'
 import ProductDetail from './ProductDetail'
+import MainContext from './Context/MainContext'
 
 
 export default function App() {
@@ -49,6 +50,8 @@ export default function App() {
 
 
   return (
-    <RouterProvider router={routes} />
+    <MainContext>
+      <RouterProvider router={routes} />
+    </MainContext>
   )
 }
