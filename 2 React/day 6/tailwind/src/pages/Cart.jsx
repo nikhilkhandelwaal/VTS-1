@@ -1,8 +1,56 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
+import { Context } from '../Context/MainContext'
 
 export default function Cart() {
+
+    const { cart, setCart } = useContext(Context);
+    const [totalAmount, setTotalAmount] = useState(0);
+
+    const calculateTotalAmount = () => {
+        let total = 0;
+        cart.forEach((item) => {
+            total += item.price * item.quantity;
+        });
+        setTotalAmount(total);
+    };
+
+    const increaseQty = (id) => {
+        const newCart = cart.map((data) => {
+            if (data.id == id) {
+                if (data.quantity < 10) {
+                    data.quantity++
+                }
+            }
+            return data;
+        })
+        setCart(newCart);
+    }
+
+    const decreseQty = (id) => {
+        const newCart = cart.map((data) => {
+            if (data.id == id) {
+                if (data.quantity > 1) {
+                    data.quantity--
+                }
+            }
+            return data;
+        })
+        setCart(newCart);
+    }
+
+    const removeCartItem = (index) => {
+        const newCart = [...cart];
+        newCart.splice(index, 1);
+        setCart(newCart);
+    }
+
+    useEffect(() => {
+        calculateTotalAmount();
+    }, [cart])
+
+
     return (
         <>
             <div className="min-h-screen bg-gray-50">
@@ -21,13 +69,15 @@ export default function Cart() {
                     <div className="grid gap-8 lg:grid-cols-3">
                         {/* Cart Items */}
                         <div className="lg:col-span-2 space-y-5">
-                            {[1, 2, 3].map((item) => (
+                            {cart.map((item, index) => (
                                 <div
-                                    key={item}
+                                    key={index}
                                     className="flex flex-col gap-4 rounded-2xl border bg-white p-5 shadow-sm sm:flex-row"
                                 >
                                     {/* Product Image */}
-                                    <div className="h-32 w-full rounded-xl bg-gray-200 sm:h-28 sm:w-28" />
+                                    <div className="h-32 w-full rounded-xl bg-gray-200 sm:h-28 sm:w-28" >
+                                        <img src={item.thumbnail} alt="" />
+                                    </div>
 
                                     {/* Product Info */}
                                     <div className="flex flex-1 flex-col justify-between">
@@ -35,30 +85,33 @@ export default function Cart() {
                                             <div className="flex items-start justify-between">
                                                 <div>
                                                     <h3 className="text-lg font-semibold text-gray-900">
-                                                        Premium Headphones
+                                                        {item.title}
                                                     </h3>
                                                 </div>
 
-                                                <button className="text-sm font-medium text-red-500 hover:text-red-600">
+                                                <button onClick={() => removeCartItem(index)} className="text-sm font-medium text-red-500 hover:text-red-600">
                                                     Remove
                                                 </button>
                                             </div>
 
                                             <p className="mt-1 text-sm text-gray-500">
-                                                Beauty
+                                                {item.category}
+                                            </p>
+                                            <p className="mt-1 text-sm text-gray-500">
+                                                ${item.price}
                                             </p>
                                         </div>
 
                                         <div className="mt-4 flex items-center justify-between">
                                             {/* Quantity */}
                                             <div className="flex items-center rounded-lg border">
-                                                <button className="px-3 py-2 text-gray-600">−</button>
-                                                <span className="px-4 text-sm font-medium">1</span>
-                                                <button className="px-3 py-2 text-gray-600">+</button>
+                                                <button className="px-3 py-2 text-gray-600" onClick={() => decreseQty(item.id)}>−</button>
+                                                <span className="px-4 text-sm font-medium">{item.quantity}</span>
+                                                <button className="px-3 py-2 text-gray-600" onClick={() => increaseQty(item.id)}>+</button>
                                             </div>
 
                                             {/* Price */}
-                                            <p className="text-lg font-bold text-gray-900">$199.00</p>
+                                            <p className="text-lg font-bold text-gray-900"> ${item.price * item.quantity}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -93,7 +146,7 @@ export default function Cart() {
                                 <div className="mt-6 space-y-4">
                                     <div className="flex justify-between text-sm text-gray-600">
                                         <span>Subtotal</span>
-                                        <span>$597.00</span>
+                                        <span>${totalAmount}</span>
                                     </div>
 
                                     <div className="flex justify-between text-sm text-gray-600">

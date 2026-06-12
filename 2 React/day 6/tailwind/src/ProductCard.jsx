@@ -7,7 +7,21 @@ export default function ProductCard({ value }) {
     const { cart, setCart } = useContext(Context);
 
     const addToCart = (productItem) => {
-        setCart([...cart, productItem]);
+        const isAvailable = cart.filter((item) => item.id === productItem.id);
+        if (isAvailable.length > 0) {
+            isAvailable[0].quantity++;
+        } else {
+            const newCartItem = {
+                id: productItem.id,
+                title: productItem.title,
+                price: productItem.price,
+                thumbnail: productItem.thumbnail,
+                category: productItem.category,
+                quantity: 1
+            }
+            setCart([...cart, newCartItem]);
+        }
+
     }
 
     return (
